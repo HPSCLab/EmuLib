@@ -1,4 +1,4 @@
-# EmulLib
+# EmuLib
 
 ## Overview 
 EmulLib is PHP and Python languages based library that has been developed to provide bare-metal based malware analysis environment for an analyst, developer, etc.  
