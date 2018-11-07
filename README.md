@@ -8,46 +8,46 @@ Our system's main resource is Emulab on KREONET EMULAB shown at "https://www.emu
 ## Usage
 ### Python 
 #### Library importing 
-	import MASE 
+	import EMMA 
 	
 #### Session creating function 
 This "Session" function returns session id that will be used to an argument of requesting analysis if an inputted argument is sure as the available account.  
 
-	MASE.Session(id="user", pw="passwd")
+	EMMA.Session(id="user", pw="passwd")
 	
 #### Analysis requesting function  
 This "Analyze" function requires argument data shown in below.  
 A session argument must be an issued id depend on "Session" function.  
 	
-	MASE.Analyze(session="sessionid",proj="PROJECTNAME",reboot="YESorNo", report="YESorNo", filedump="YESorNo", trafficdump="YESorNo", uploaded_filepath="filepath+filename") 
+	EMMA.Analyze(session="sessionid",proj="PROJECTNAME",reboot="YESorNo", report="YESorNo", filedump="YESorNo", trafficdump="YESorNo", uploaded_filepath="filepath+filename") 
 
 #### Session's list providing function 
 This "sessionlist" function returns a list of a session id that a user has.  
 
-	MASE.Sessionlist(id="user", pw="passwd") 
+	EMMA.Sessionlist(id="user", pw="passwd") 
 	
 #### Progress rate providing function
 This "Progress" function returns progress rate of analysis according to a session id.  
 
-	MASE.Progress("Sessionid") 
+	EMMA.Progress("Sessionid") 
 	
 #### Result downloading function
 This "ResultDownload" function download an analyzed files if the analysis has been completed.  
 
-	MASE.ResultDownload(session="Sessionid", path="Downloadpath") 
+	EMMA.ResultDownload(session="Sessionid", path="Downloadpath") 
 	
 ### PHP
 #### Library including  
-	include ("MASE.php"); 
+	include ("EMMA.php"); 
 	
 #### Instance creating  
-	$MASE_obj = new MASE; 
+	$EMMA_obj = new EMMA; 
 	
 #### Session creating function 
 This "Session" function returns session id that will be used to an argument of requesting analysis if an inputted argument is sure as the available account.
 Arguments used to "Session" function same Python language based library's Sesson function. 
 
-	$Sessionid = $MASE_obj -> Session("user","passwd") 
+	$Sessionid = $EMMA_obj -> Session("user","passwd") 
 	
 #### Analysis requesting function  
 This "Analyze" function requires argument data shown in below.  
@@ -59,19 +59,19 @@ A fifth argument means whether a user wants a result of the file analyzed.
 A sixth argument means whether a user wants a result of the traffic analyzed.  
 A seventh argument means a file and file path information a user wanna analyze.  
 	
-	$Analysis_request = $MASE_obj->Analyze($Sessionid, "projName", "No", "Yes", "Yes", "Yes", "./test.exe"); 
+	$Analysis_request = $EMMA_obj->Analyze($Sessionid, "projName", "No", "Yes", "Yes", "Yes", "./test.exe"); 
 
 #### Session's list providing function 
 This "sessionlist" function returns a list of a session id that a user has.  
 
-	#Sessionlist = $MASE_obj -> Sessionlist("user", "passwd"); 
+	#Sessionlist = $EMMA_obj -> Sessionlist("user", "passwd"); 
 	
 #### Progress rate providing function
 This "Progress" function returns progress rate of analysis according to a session id.  
 
-	$progressS_rate = $MASE_obj->Progress("Sessionid"); 
+	$progressS_rate = $EMMA_obj->Progress("Sessionid"); 
 	
 #### Result downloading function
 This "ResultDownload" function download an analyzed files if the analysis has been completed.  
 
-	$result = $MASE_obj->ResultDownload("Sessionid","path"); 
+	$result = $EMMA_obj->ResultDownload("Sessionid","path"); 
