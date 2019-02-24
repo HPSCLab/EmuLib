@@ -18,8 +18,8 @@ This "Session" function returns session id that will be used to an argument of r
 #### Analysis requesting function  
 This "Analyze" function requires argument data shown in below.  
 A session argument must be an issued id depend on "Session" function.  
+
 	EmuLib.Analysis_setting(session="sessionid",proj="PROJECTNAME",reboot="YESorNo", report="YESorNo", filedump="YESorNo", trafficdump="YESorNo", uploaded_filepath="filepath+filename") 
-	
 	EmuLib.Start_Analysis()
 
 #### Session's list providing function 
