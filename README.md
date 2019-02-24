@@ -39,16 +39,16 @@ This "ResultDownload" function download an analyzed files if the analysis has be
 	
 ### PHP
 #### Library including  
-	include ("EMMA.php"); 
+	include ("EmuLib.php"); 
 	
 #### Instance creating  
-	$EMMA_obj = new EMMA; 
+	$EmuLib_obj = new EmuLib; 
 	
 #### Session creating function 
 This "Session" function returns session id that will be used to an argument of requesting analysis if an inputted argument is sure as the available account.
 Arguments used to "Session" function same Python language based library's Sesson function. 
 
-	$Sessionid = $EMMA_obj -> Session("user","passwd") 
+	$Sessionid = $EmuLib_obj -> Session("user","passwd") 
 	
 #### Analysis requesting function  
 This "Analyze" function requires argument data shown in below.  
@@ -60,19 +60,20 @@ A fifth argument means whether a user wants a result of the file analyzed.
 A sixth argument means whether a user wants a result of the traffic analyzed.  
 A seventh argument means a file and file path information a user wanna analyze.  
 	
-	$Analysis_request = $EMMA_obj->Analyze($Sessionid, "projName", "No", "Yes", "Yes", "Yes", "./test.exe"); 
+	$Analysis_request = $EmuLib_obj->Analysis_setting($Sessionid, "projName", "No", "Yes", "Yes", "Yes", "./test.exe"); 
+	$Analysis_request = $EmuLib_obj->Start_Analysis(); 
 
 #### Session's list providing function 
 This "sessionlist" function returns a list of a session id that a user has.  
 
-	#Sessionlist = $EMMA_obj -> Sessionlist("user", "passwd"); 
+	#Sessionlist = $EmuLib_obj -> Sessionlist("user", "passwd"); 
 	
 #### Progress rate providing function
 This "Progress" function returns progress rate of analysis according to a session id.  
 
-	$progressS_rate = $EMMA_obj->Progress("Sessionid"); 
+	$progressS_rate = $EmuLib_obj->Progress("Sessionid"); 
 	
 #### Result downloading function
 This "ResultDownload" function download an analyzed files if the analysis has been completed.  
 
-	$result = $EMMA_obj->ResultDownload("Sessionid","path"); 
+	$result = $EmuLib_obj->ResultDownload("Sessionid","path"); 
