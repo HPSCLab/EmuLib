@@ -8,33 +8,34 @@ Our system's main resource is Emulab on KREONET EMULAB shown at "https://www.emu
 ## Usage
 ### Python 
 #### Library importing 
-	import EMMA 
+	import EmuLib
 	
 #### Session creating function 
 This "Session" function returns session id that will be used to an argument of requesting analysis if an inputted argument is sure as the available account.  
 
-	EMMA.Session(id="user", pw="passwd")
+	EmuLib.Account_setting(id="user", pw="passwd")
 	
 #### Analysis requesting function  
 This "Analyze" function requires argument data shown in below.  
 A session argument must be an issued id depend on "Session" function.  
+	EmuLib.Analysis_setting(session="sessionid",proj="PROJECTNAME",reboot="YESorNo", report="YESorNo", filedump="YESorNo", trafficdump="YESorNo", uploaded_filepath="filepath+filename") 
 	
-	EMMA.Analyze(session="sessionid",proj="PROJECTNAME",reboot="YESorNo", report="YESorNo", filedump="YESorNo", trafficdump="YESorNo", uploaded_filepath="filepath+filename") 
+	EmuLib.Start_Analysis()
 
 #### Session's list providing function 
 This "sessionlist" function returns a list of a session id that a user has.  
 
-	EMMA.Sessionlist(id="user", pw="passwd") 
+	EmuLib.Sessionlist(id="user", pw="passwd") 
 	
 #### Progress rate providing function
 This "Progress" function returns progress rate of analysis according to a session id.  
 
-	EMMA.Progress("Sessionid") 
+	EmuLib.Progress("Sessionid") 
 	
 #### Result downloading function
 This "ResultDownload" function download an analyzed files if the analysis has been completed.  
 
-	EMMA.ResultDownload(session="Sessionid", path="Downloadpath") 
+	EmuLib.ResultDownload(session="Sessionid", path="Downloadpath") 
 	
 ### PHP
 #### Library including  
