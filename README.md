@@ -66,12 +66,12 @@ A seventh argument means a file and file path information a user wanna analyze.
 #### Session's list providing function 
 This "sessionlist" function returns a list of a session id that a user has.  
 
-	#Sessionlist = $EmuLib_obj -> Sessionlist("user", "passwd"); 
+	#Sessionlist = $EmuLib_obj->Sessionlist("user", "passwd"); 
 	
 #### Progress rate providing function
 This "Progress" function returns progress rate of analysis according to a session id.  
 
-	$progressS_rate = $EmuLib_obj->Progress("Sessionid"); 
+	$progress_rate = $EmuLib_obj->Progress("Sessionid"); 
 	
 #### Result downloading function
 This "ResultDownload" function download an analyzed files if the analysis has been completed.  
